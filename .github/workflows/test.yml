@@ -1,0 +1,39 @@
+# Verifies the published package builds and is consumable on every Python version it
+# claims to support. The upstream pipeline that generates this repo exercises a
+# single version, so without this matrix that claim is untested.
+#
+# This file is generated — edit it at sdks/backend-sdk/mirror/python/ in the
+# api-ts-v3 monorepo, not here.
+
+name: test
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  install:
+    name: Python ${{ matrix.python }}
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        python: ['3.9', '3.10', '3.11', '3.12', '3.13']
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python }}
+      # Installs the package exactly as `pip install maytes-api-client-py` would,
+      # which is what proves requires-python and the dependency pins are honest.
+      - run: pip install .
+      - name: Smoke test
+        run: |
+          python - <<'PY'
+          import maytes_api_client as m
+          for name in ("create_maytes_api_client", "verify_webhook_signature"):
+              assert hasattr(m, name), f"missing export: {name}"
+          print("exports ok")
+          PY
