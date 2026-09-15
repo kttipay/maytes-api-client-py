@@ -1,6 +1,6 @@
 [project]
 name = "maytes-api-client-py"
-version = "0.1.1"
+version = "0.1.2"
 description = "Official Python client for the Maytes API — create, capture and cancel checkouts, with OAuth2 token management and webhook signature verification."
 authors = [
   {name = "Maytes"},
