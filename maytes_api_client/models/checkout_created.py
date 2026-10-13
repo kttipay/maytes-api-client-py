@@ -19,7 +19,7 @@ import json
 
 from datetime import datetime
 from pydantic import BaseModel, ConfigDict, StrictStr
-from typing import Any, ClassVar, Dict, List
+from typing import Any, ClassVar, Dict, List, Optional
 from typing import Optional, Set
 from typing_extensions import Self
 from pydantic_core import to_jsonable_python
@@ -31,7 +31,7 @@ class CheckoutCreated(BaseModel):
     checkout_uuid: StrictStr
     status: StrictStr
     checkout_url: StrictStr
-    expires_at: datetime
+    expires_at: Optional[datetime]
     __properties: ClassVar[List[str]] = ["checkout_uuid", "status", "checkout_url", "expires_at"]
 
     model_config = ConfigDict(
@@ -73,6 +73,11 @@ class CheckoutCreated(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
+        # set to None if expires_at (nullable) is None
+        # and model_fields_set contains the field
+        if self.expires_at is None and "expires_at" in self.model_fields_set:
+            _dict['expires_at'] = None
+
         return _dict
 
     @classmethod
