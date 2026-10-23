@@ -18,6 +18,7 @@ Name | Type | Description | Notes
 **currency** | **str** |  | 
 **service_fee** | [**Fee**](Fee.md) |  | 
 **refunded_amount** | **int** |  | 
+**remaining_amount** | **int** |  | 
 **merchant_processor_fee** | **int** |  | 
 **merchant_service_fee** | **int** |  | 
 **last_refund_at** | **datetime** |  | 

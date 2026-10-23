@@ -58,6 +58,7 @@ class TestCheckout(unittest.TestCase):
                             amount = 56, )
                         ], ),
                 refunded_amount = 0,
+                remaining_amount = 0,
                 merchant_processor_fee = 0,
                 merchant_service_fee = 0,
                 last_refund_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f')
@@ -87,6 +88,7 @@ class TestCheckout(unittest.TestCase):
                             amount = 56, )
                         ], ),
                 refunded_amount = 0,
+                remaining_amount = 0,
                 merchant_processor_fee = 0,
                 merchant_service_fee = 0,
                 last_refund_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'),

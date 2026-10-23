@@ -43,10 +43,11 @@ class Checkout(BaseModel):
     currency: StrictStr
     service_fee: Fee
     refunded_amount: Annotated[int, Field(strict=True, ge=0)]
+    remaining_amount: Annotated[int, Field(strict=True, ge=0)]
     merchant_processor_fee: Annotated[int, Field(strict=True, ge=0)]
     merchant_service_fee: Annotated[int, Field(strict=True, ge=0)]
     last_refund_at: Optional[datetime]
-    __properties: ClassVar[List[str]] = ["checkout_uuid", "merchant_order_id", "status", "transaction_ref", "checkout_url", "merchant_expires_at", "captured_at", "return_url", "cancel_url", "amount", "currency", "service_fee", "refunded_amount", "merchant_processor_fee", "merchant_service_fee", "last_refund_at"]
+    __properties: ClassVar[List[str]] = ["checkout_uuid", "merchant_order_id", "status", "transaction_ref", "checkout_url", "merchant_expires_at", "captured_at", "return_url", "cancel_url", "amount", "currency", "service_fee", "refunded_amount", "remaining_amount", "merchant_processor_fee", "merchant_service_fee", "last_refund_at"]
 
     model_config = ConfigDict(
         validate_by_name=True,
@@ -150,6 +151,7 @@ class Checkout(BaseModel):
             "currency": obj.get("currency"),
             "service_fee": Fee.from_dict(obj["service_fee"]) if obj.get("service_fee") is not None else None,
             "refunded_amount": obj.get("refunded_amount"),
+            "remaining_amount": obj.get("remaining_amount"),
             "merchant_processor_fee": obj.get("merchant_processor_fee"),
             "merchant_service_fee": obj.get("merchant_service_fee"),
             "last_refund_at": obj.get("last_refund_at")
