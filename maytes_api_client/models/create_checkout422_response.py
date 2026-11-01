@@ -36,8 +36,8 @@ class CreateCheckout422Response(BaseModel):
     @field_validator('code')
     def code_validate_enum(cls, value):
         """Validates the enum"""
-        if value not in set(['invalid_amount', 'amount_below_minimum', 'invalid_amount_arithmetic', 'currency_not_supported', 'merchant_currency_mismatch', 'merchant_not_configured']):
-            raise ValueError("must be one of enum values ('invalid_amount', 'amount_below_minimum', 'invalid_amount_arithmetic', 'currency_not_supported', 'merchant_currency_mismatch', 'merchant_not_configured')")
+        if value not in set(['invalid_amount', 'invalid_friends', 'amount_below_minimum', 'invalid_amount_arithmetic', 'currency_not_supported', 'merchant_currency_mismatch', 'merchant_not_configured']):
+            raise ValueError("must be one of enum values ('invalid_amount', 'invalid_friends', 'amount_below_minimum', 'invalid_amount_arithmetic', 'currency_not_supported', 'merchant_currency_mismatch', 'merchant_not_configured')")
         return value
 
     model_config = ConfigDict(

@@ -19,6 +19,7 @@ Name | Type | Description | Notes
 **customer_data** | [**CustomerData**](CustomerData.md) |  | [optional] 
 **metadata** | **Dict[str, object]** |  | [optional] 
 **allocation_model** | **str** |  | [optional] 
+**friends** | [**CheckoutFriends**](CheckoutFriends.md) | Who the customer is expected to split with. Pre-fills their share and allocation screens; the customer can still change it. Personal data — send it only when you hold it. | [optional] 
 
 ## Example
 

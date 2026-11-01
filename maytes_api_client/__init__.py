@@ -14,7 +14,7 @@
 """  # noqa: E501
 
 
-__version__ = "0.1.6"
+__version__ = "0.1.7"
 
 # Define package exports
 __all__ = [
@@ -41,6 +41,9 @@ __all__ = [
     "CheckoutCreated",
     "CheckoutDiscount",
     "CheckoutFee",
+    "CheckoutFriend",
+    "CheckoutFriendItem",
+    "CheckoutFriends",
     "CreateCheckout401Response",
     "CreateCheckout409Response",
     "CreateCheckout422Response",
@@ -106,6 +109,9 @@ from maytes_api_client.models.checkout_captured import CheckoutCaptured as Check
 from maytes_api_client.models.checkout_created import CheckoutCreated as CheckoutCreated
 from maytes_api_client.models.checkout_discount import CheckoutDiscount as CheckoutDiscount
 from maytes_api_client.models.checkout_fee import CheckoutFee as CheckoutFee
+from maytes_api_client.models.checkout_friend import CheckoutFriend as CheckoutFriend
+from maytes_api_client.models.checkout_friend_item import CheckoutFriendItem as CheckoutFriendItem
+from maytes_api_client.models.checkout_friends import CheckoutFriends as CheckoutFriends
 from maytes_api_client.models.create_checkout401_response import CreateCheckout401Response as CreateCheckout401Response
 from maytes_api_client.models.create_checkout409_response import CreateCheckout409Response as CreateCheckout409Response
 from maytes_api_client.models.create_checkout422_response import CreateCheckout422Response as CreateCheckout422Response

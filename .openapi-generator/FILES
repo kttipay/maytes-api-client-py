@@ -17,6 +17,9 @@ docs/CheckoutCaptured.md
 docs/CheckoutCreated.md
 docs/CheckoutDiscount.md
 docs/CheckoutFee.md
+docs/CheckoutFriend.md
+docs/CheckoutFriendItem.md
+docs/CheckoutFriends.md
 docs/CreateCheckout401Response.md
 docs/CreateCheckout409Response.md
 docs/CreateCheckout422Response.md
@@ -75,6 +78,9 @@ maytes_api_client/models/checkout_captured.py
 maytes_api_client/models/checkout_created.py
 maytes_api_client/models/checkout_discount.py
 maytes_api_client/models/checkout_fee.py
+maytes_api_client/models/checkout_friend.py
+maytes_api_client/models/checkout_friend_item.py
+maytes_api_client/models/checkout_friends.py
 maytes_api_client/models/create_checkout401_response.py
 maytes_api_client/models/create_checkout409_response.py
 maytes_api_client/models/create_checkout422_response.py
@@ -131,6 +137,9 @@ test/test_checkout_captured.py
 test/test_checkout_created.py
 test/test_checkout_discount.py
 test/test_checkout_fee.py
+test/test_checkout_friend.py
+test/test_checkout_friend_item.py
+test/test_checkout_friends.py
 test/test_create_checkout401_response.py
 test/test_create_checkout409_response.py
 test/test_create_checkout422_response.py

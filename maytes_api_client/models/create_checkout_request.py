@@ -23,6 +23,7 @@ from typing import Any, ClassVar, Dict, List, Optional
 from typing_extensions import Annotated
 from maytes_api_client.models.checkout_discount import CheckoutDiscount
 from maytes_api_client.models.checkout_fee import CheckoutFee
+from maytes_api_client.models.checkout_friends import CheckoutFriends
 from maytes_api_client.models.customer_data import CustomerData
 from maytes_api_client.models.line_item import LineItem
 from maytes_api_client.models.tax import Tax
@@ -48,7 +49,8 @@ class CreateCheckoutRequest(BaseModel):
     customer_data: Optional[CustomerData] = None
     metadata: Optional[Dict[str, Any]] = None
     allocation_model: Optional[StrictStr] = None
-    __properties: ClassVar[List[str]] = ["merchant_order_id", "merchant_expires_at", "total_amount", "currency", "return_url", "cancel_url", "items", "fees", "discounts", "tax", "shipping_amount", "customer_data", "metadata", "allocation_model"]
+    friends: Optional[CheckoutFriends] = Field(default=None, description="Who the customer is expected to split with. Pre-fills their share and allocation screens; the customer can still change it. Personal data — send it only when you hold it.")
+    __properties: ClassVar[List[str]] = ["merchant_order_id", "merchant_expires_at", "total_amount", "currency", "return_url", "cancel_url", "items", "fees", "discounts", "tax", "shipping_amount", "customer_data", "metadata", "allocation_model", "friends"]
 
     @field_validator('currency')
     def currency_validate_regular_expression(cls, value):
@@ -136,6 +138,9 @@ class CreateCheckoutRequest(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of customer_data
         if self.customer_data:
             _dict['customer_data'] = self.customer_data.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of friends
+        if self.friends:
+            _dict['friends'] = self.friends.to_dict()
         # set to None if merchant_order_id (nullable) is None
         # and model_fields_set contains the field
         if self.merchant_order_id is None and "merchant_order_id" in self.model_fields_set:
@@ -181,6 +186,11 @@ class CreateCheckoutRequest(BaseModel):
         if self.allocation_model is None and "allocation_model" in self.model_fields_set:
             _dict['allocation_model'] = None
 
+        # set to None if friends (nullable) is None
+        # and model_fields_set contains the field
+        if self.friends is None and "friends" in self.model_fields_set:
+            _dict['friends'] = None
+
         return _dict
 
     @classmethod
@@ -206,7 +216,8 @@ class CreateCheckoutRequest(BaseModel):
             "shipping_amount": obj.get("shipping_amount"),
             "customer_data": CustomerData.from_dict(obj["customer_data"]) if obj.get("customer_data") is not None else None,
             "metadata": obj.get("metadata"),
-            "allocation_model": obj.get("allocation_model")
+            "allocation_model": obj.get("allocation_model"),
+            "friends": CheckoutFriends.from_dict(obj["friends"]) if obj.get("friends") is not None else None
         })
         return _obj
 

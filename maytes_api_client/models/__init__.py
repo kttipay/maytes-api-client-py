@@ -26,6 +26,9 @@ from maytes_api_client.models.checkout_captured import CheckoutCaptured
 from maytes_api_client.models.checkout_created import CheckoutCreated
 from maytes_api_client.models.checkout_discount import CheckoutDiscount
 from maytes_api_client.models.checkout_fee import CheckoutFee
+from maytes_api_client.models.checkout_friend import CheckoutFriend
+from maytes_api_client.models.checkout_friend_item import CheckoutFriendItem
+from maytes_api_client.models.checkout_friends import CheckoutFriends
 from maytes_api_client.models.create_checkout401_response import CreateCheckout401Response
 from maytes_api_client.models.create_checkout409_response import CreateCheckout409Response
 from maytes_api_client.models.create_checkout422_response import CreateCheckout422Response
