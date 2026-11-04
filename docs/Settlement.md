@@ -5,8 +5,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**uuid** | **UUID** |  | 
-**merchant_uuid** | **UUID** |  | 
+**uuid** | **str** |  | 
+**merchant_uuid** | **str** |  | 
 **period_from** | **datetime** |  | 
 **period_to** | **datetime** |  | 
 **idempotency_key** | **str** |  | 
@@ -18,7 +18,7 @@ Name | Type | Description | Notes
 **notes** | **str** |  | 
 **settled_at** | **datetime** |  | 
 **expires_at** | **datetime** |  | 
-**reviewed_by_user_uuid** | **UUID** |  | 
+**reviewed_by_user_uuid** | **str** |  | 
 **reviewed_at** | **datetime** |  | 
 **rejection_reason** | **str** |  | 
 **created_at** | **datetime** |  | 

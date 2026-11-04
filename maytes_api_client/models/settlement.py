@@ -21,7 +21,6 @@ from datetime import datetime
 from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from typing_extensions import Annotated
-from uuid import UUID
 from typing import Optional, Set
 from typing_extensions import Self
 from pydantic_core import to_jsonable_python
@@ -30,8 +29,8 @@ class Settlement(BaseModel):
     """
     Settlement
     """ # noqa: E501
-    uuid: UUID
-    merchant_uuid: UUID
+    uuid: StrictStr
+    merchant_uuid: StrictStr
     period_from: datetime
     period_to: datetime
     idempotency_key: StrictStr
@@ -43,7 +42,7 @@ class Settlement(BaseModel):
     notes: Optional[StrictStr]
     settled_at: Optional[datetime]
     expires_at: Optional[datetime]
-    reviewed_by_user_uuid: Optional[UUID]
+    reviewed_by_user_uuid: Optional[StrictStr]
     reviewed_at: Optional[datetime]
     rejection_reason: Optional[StrictStr]
     created_at: datetime
