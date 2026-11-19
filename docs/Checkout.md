@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **checkout_uuid** | **str** |  | 
 **merchant_order_id** | **str** |  | 
 **status** | **str** |  | 
-**transaction_ref** | **str** |  | 
+**transaction_ref** | **str** | Always null. Will be removed in a future API version. | 
 **checkout_url** | **str** |  | 
 **merchant_expires_at** | **datetime** |  | 
 **captured_at** | **datetime** |  | 

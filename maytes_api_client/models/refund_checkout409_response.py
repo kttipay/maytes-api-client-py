@@ -36,8 +36,8 @@ class RefundCheckout409Response(BaseModel):
     @field_validator('code')
     def code_validate_enum(cls, value):
         """Validates the enum"""
-        if value not in set(['not_refundable']):
-            raise ValueError("must be one of enum values ('not_refundable')")
+        if value not in set(['not_refundable', 'payment_has_chargeback']):
+            raise ValueError("must be one of enum values ('not_refundable', 'payment_has_chargeback')")
         return value
 
     model_config = ConfigDict(

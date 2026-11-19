@@ -33,7 +33,7 @@ class Checkout(BaseModel):
     checkout_uuid: StrictStr
     merchant_order_id: Optional[StrictStr]
     status: StrictStr
-    transaction_ref: Optional[StrictStr]
+    transaction_ref: Optional[StrictStr] = Field(description="Always null. Will be removed in a future API version.")
     checkout_url: StrictStr
     merchant_expires_at: Optional[datetime]
     captured_at: Optional[datetime]
