@@ -52,6 +52,7 @@ class TestGetSettlementResponse(unittest.TestCase):
                     reviewed_by_user_uuid = '', 
                     reviewed_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
                     rejection_reason = '', 
+                    upsell = null, 
                     created_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
                     updated_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), )
             )
@@ -74,6 +75,7 @@ class TestGetSettlementResponse(unittest.TestCase):
                     reviewed_by_user_uuid = '', 
                     reviewed_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
                     rejection_reason = '', 
+                    upsell = null, 
                     created_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
                     updated_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), ),
         )

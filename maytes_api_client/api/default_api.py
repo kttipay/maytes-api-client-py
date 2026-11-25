@@ -701,6 +701,7 @@ class DefaultApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "CreateCheckoutResponse",
             '401': "CreateCheckout401Response",
+            '403': "CreateCheckout403Response",
             '409': "CreateCheckout409Response",
             '422': "CreateCheckout422Response",
         }
@@ -770,6 +771,7 @@ class DefaultApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "CreateCheckoutResponse",
             '401': "CreateCheckout401Response",
+            '403': "CreateCheckout403Response",
             '409': "CreateCheckout409Response",
             '422': "CreateCheckout422Response",
         }
@@ -839,6 +841,7 @@ class DefaultApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "CreateCheckoutResponse",
             '401': "CreateCheckout401Response",
+            '403': "CreateCheckout403Response",
             '409': "CreateCheckout409Response",
             '422': "CreateCheckout422Response",
         }

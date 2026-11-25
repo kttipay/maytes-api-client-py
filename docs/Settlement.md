@@ -21,6 +21,7 @@ Name | Type | Description | Notes
 **reviewed_by_user_uuid** | **str** |  | 
 **reviewed_at** | **datetime** |  | 
 **rejection_reason** | **str** |  | 
+**upsell** | [**SettlementUpsell**](SettlementUpsell.md) |  | 
 **created_at** | **datetime** |  | 
 **updated_at** | **datetime** |  | 
 

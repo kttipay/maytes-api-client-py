@@ -30,6 +30,7 @@ from maytes_api_client.models.checkout_friend import CheckoutFriend
 from maytes_api_client.models.checkout_friend_item import CheckoutFriendItem
 from maytes_api_client.models.checkout_friends import CheckoutFriends
 from maytes_api_client.models.create_checkout401_response import CreateCheckout401Response
+from maytes_api_client.models.create_checkout403_response import CreateCheckout403Response
 from maytes_api_client.models.create_checkout409_response import CreateCheckout409Response
 from maytes_api_client.models.create_checkout422_response import CreateCheckout422Response
 from maytes_api_client.models.create_checkout_request import CreateCheckoutRequest
@@ -60,6 +61,7 @@ from maytes_api_client.models.refund_checkout409_response import RefundCheckout4
 from maytes_api_client.models.service_custom_data import ServiceCustomData
 from maytes_api_client.models.service_line_item import ServiceLineItem
 from maytes_api_client.models.settlement import Settlement
+from maytes_api_client.models.settlement_upsell import SettlementUpsell
 from maytes_api_client.models.tax import Tax
 from maytes_api_client.models.ticket_custom_data import TicketCustomData
 from maytes_api_client.models.ticket_line_item import TicketLineItem

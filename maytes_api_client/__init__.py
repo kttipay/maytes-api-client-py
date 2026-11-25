@@ -14,7 +14,7 @@
 """  # noqa: E501
 
 
-__version__ = "0.3.0"
+__version__ = "0.4.0"
 
 # Define package exports
 __all__ = [
@@ -45,6 +45,7 @@ __all__ = [
     "CheckoutFriendItem",
     "CheckoutFriends",
     "CreateCheckout401Response",
+    "CreateCheckout403Response",
     "CreateCheckout409Response",
     "CreateCheckout422Response",
     "CreateCheckoutRequest",
@@ -75,6 +76,7 @@ __all__ = [
     "ServiceCustomData",
     "ServiceLineItem",
     "Settlement",
+    "SettlementUpsell",
     "Tax",
     "TicketCustomData",
     "TicketLineItem",
@@ -113,6 +115,7 @@ from maytes_api_client.models.checkout_friend import CheckoutFriend as CheckoutF
 from maytes_api_client.models.checkout_friend_item import CheckoutFriendItem as CheckoutFriendItem
 from maytes_api_client.models.checkout_friends import CheckoutFriends as CheckoutFriends
 from maytes_api_client.models.create_checkout401_response import CreateCheckout401Response as CreateCheckout401Response
+from maytes_api_client.models.create_checkout403_response import CreateCheckout403Response as CreateCheckout403Response
 from maytes_api_client.models.create_checkout409_response import CreateCheckout409Response as CreateCheckout409Response
 from maytes_api_client.models.create_checkout422_response import CreateCheckout422Response as CreateCheckout422Response
 from maytes_api_client.models.create_checkout_request import CreateCheckoutRequest as CreateCheckoutRequest
@@ -143,6 +146,7 @@ from maytes_api_client.models.refund_checkout409_response import RefundCheckout4
 from maytes_api_client.models.service_custom_data import ServiceCustomData as ServiceCustomData
 from maytes_api_client.models.service_line_item import ServiceLineItem as ServiceLineItem
 from maytes_api_client.models.settlement import Settlement as Settlement
+from maytes_api_client.models.settlement_upsell import SettlementUpsell as SettlementUpsell
 from maytes_api_client.models.tax import Tax as Tax
 from maytes_api_client.models.ticket_custom_data import TicketCustomData as TicketCustomData
 from maytes_api_client.models.ticket_line_item import TicketLineItem as TicketLineItem

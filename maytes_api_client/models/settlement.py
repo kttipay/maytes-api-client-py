@@ -21,6 +21,7 @@ from datetime import datetime
 from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from typing_extensions import Annotated
+from maytes_api_client.models.settlement_upsell import SettlementUpsell
 from typing import Optional, Set
 from typing_extensions import Self
 from pydantic_core import to_jsonable_python
@@ -45,9 +46,10 @@ class Settlement(BaseModel):
     reviewed_by_user_uuid: Optional[StrictStr]
     reviewed_at: Optional[datetime]
     rejection_reason: Optional[StrictStr]
+    upsell: Optional[SettlementUpsell]
     created_at: datetime
     updated_at: datetime
-    __properties: ClassVar[List[str]] = ["uuid", "merchant_uuid", "period_from", "period_to", "idempotency_key", "merchant_payable_amount", "settled_amount", "currency", "status", "stripe_transfer_id", "notes", "settled_at", "expires_at", "reviewed_by_user_uuid", "reviewed_at", "rejection_reason", "created_at", "updated_at"]
+    __properties: ClassVar[List[str]] = ["uuid", "merchant_uuid", "period_from", "period_to", "idempotency_key", "merchant_payable_amount", "settled_amount", "currency", "status", "stripe_transfer_id", "notes", "settled_at", "expires_at", "reviewed_by_user_uuid", "reviewed_at", "rejection_reason", "upsell", "created_at", "updated_at"]
 
     model_config = ConfigDict(
         validate_by_name=True,
@@ -88,6 +90,9 @@ class Settlement(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
+        # override the default output from pydantic by calling `to_dict()` of upsell
+        if self.upsell:
+            _dict['upsell'] = self.upsell.to_dict()
         # set to None if stripe_transfer_id (nullable) is None
         # and model_fields_set contains the field
         if self.stripe_transfer_id is None and "stripe_transfer_id" in self.model_fields_set:
@@ -123,6 +128,11 @@ class Settlement(BaseModel):
         if self.rejection_reason is None and "rejection_reason" in self.model_fields_set:
             _dict['rejection_reason'] = None
 
+        # set to None if upsell (nullable) is None
+        # and model_fields_set contains the field
+        if self.upsell is None and "upsell" in self.model_fields_set:
+            _dict['upsell'] = None
+
         return _dict
 
     @classmethod
@@ -151,6 +161,7 @@ class Settlement(BaseModel):
             "reviewed_by_user_uuid": obj.get("reviewed_by_user_uuid"),
             "reviewed_at": obj.get("reviewed_at"),
             "rejection_reason": obj.get("rejection_reason"),
+            "upsell": SettlementUpsell.from_dict(obj["upsell"]) if obj.get("upsell") is not None else None,
             "created_at": obj.get("created_at"),
             "updated_at": obj.get("updated_at")
         })

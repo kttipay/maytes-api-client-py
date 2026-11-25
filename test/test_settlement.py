@@ -51,6 +51,11 @@ class TestSettlement(unittest.TestCase):
                 reviewed_by_user_uuid = '',
                 reviewed_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'),
                 rejection_reason = '',
+                upsell = maytes_api_client.models.settlement_upsell.SettlementUpsell(
+                    sales_amount = 56, 
+                    fee_amount = 56, 
+                    net_amount = 56, 
+                    order_count = 56, ),
                 created_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'),
                 updated_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f')
             )
@@ -72,6 +77,11 @@ class TestSettlement(unittest.TestCase):
                 reviewed_by_user_uuid = '',
                 reviewed_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'),
                 rejection_reason = '',
+                upsell = maytes_api_client.models.settlement_upsell.SettlementUpsell(
+                    sales_amount = 56, 
+                    fee_amount = 56, 
+                    net_amount = 56, 
+                    order_count = 56, ),
                 created_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'),
                 updated_at = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'),
         )

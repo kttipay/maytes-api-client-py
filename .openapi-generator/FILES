@@ -21,6 +21,7 @@ docs/CheckoutFriend.md
 docs/CheckoutFriendItem.md
 docs/CheckoutFriends.md
 docs/CreateCheckout401Response.md
+docs/CreateCheckout403Response.md
 docs/CreateCheckout409Response.md
 docs/CreateCheckout422Response.md
 docs/CreateCheckoutRequest.md
@@ -52,6 +53,7 @@ docs/RefundCheckout409Response.md
 docs/ServiceCustomData.md
 docs/ServiceLineItem.md
 docs/Settlement.md
+docs/SettlementUpsell.md
 docs/Tax.md
 docs/TicketCustomData.md
 docs/TicketLineItem.md
@@ -82,6 +84,7 @@ maytes_api_client/models/checkout_friend.py
 maytes_api_client/models/checkout_friend_item.py
 maytes_api_client/models/checkout_friends.py
 maytes_api_client/models/create_checkout401_response.py
+maytes_api_client/models/create_checkout403_response.py
 maytes_api_client/models/create_checkout409_response.py
 maytes_api_client/models/create_checkout422_response.py
 maytes_api_client/models/create_checkout_request.py
@@ -112,6 +115,7 @@ maytes_api_client/models/refund_checkout409_response.py
 maytes_api_client/models/service_custom_data.py
 maytes_api_client/models/service_line_item.py
 maytes_api_client/models/settlement.py
+maytes_api_client/models/settlement_upsell.py
 maytes_api_client/models/tax.py
 maytes_api_client/models/ticket_custom_data.py
 maytes_api_client/models/ticket_line_item.py
@@ -141,6 +145,7 @@ test/test_checkout_friend.py
 test/test_checkout_friend_item.py
 test/test_checkout_friends.py
 test/test_create_checkout401_response.py
+test/test_create_checkout403_response.py
 test/test_create_checkout409_response.py
 test/test_create_checkout422_response.py
 test/test_create_checkout_request.py
@@ -172,6 +177,7 @@ test/test_refund_checkout409_response.py
 test/test_service_custom_data.py
 test/test_service_line_item.py
 test/test_settlement.py
+test/test_settlement_upsell.py
 test/test_tax.py
 test/test_ticket_custom_data.py
 test/test_ticket_line_item.py
